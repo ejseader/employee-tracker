@@ -1,11 +1,13 @@
 const inquirer = require('inquirer');
 require('dotenv').config();
 require('console.table');
-const employeeList = require('./lib/employee');
+const { getDepartments, addDepartment } = require('./lib/department');
+const { showEmployees, addEmployee, updateEmployee } = require('./lib/employee');
+const { getRoles, addRole } = require('./lib/role');
 
 
-function showMenu() {
-  inquirer.prompt([
+function init() {
+  return inquirer.prompt([
     {
       name: 'option',
       message: 'What would you like to do?',
@@ -88,9 +90,8 @@ function showMenu() {
   ]).then(async (answer)  => {
     switch (answer.option) {
       case 'View All Employees':
-        employeeList.showEmployees((employees) => {
-          console.table(employees);
-        });
+        const employees = await showEmployees();
+        console.table(employees);
         break;
 
       case 'Add New Employee':
@@ -132,4 +133,4 @@ function showMenu() {
 //   app.listen(PORT, () => console.log('Now listening on port %s', PORT));
 // });
 
-showMenu();
+init();
