@@ -6,8 +6,7 @@ const { showEmployees, addEmployee, updateEmployee } = require('./lib/employee')
 const { getRoles, addRole } = require('./lib/role');
 
 
-function init() {
-  return inquirer.prompt([
+inquirer.prompt([
     {
       name: 'option',
       message: 'What would you like to do?',
@@ -20,7 +19,7 @@ function init() {
       'Add New Role', 
       'View All Departments',
       'Add New Department',
-      'Exit'
+      'Exit',
       ]
     },
     // Add New Employee
@@ -127,10 +126,9 @@ function init() {
         process.exit();
     }
   })
-}
+
 
 // db.sync({ force: false }).then(() => {
 //   app.listen(PORT, () => console.log('Now listening on port %s', PORT));
 // });
 
-init();
