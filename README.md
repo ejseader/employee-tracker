@@ -4,8 +4,8 @@
 ---
 ### - [Description](#description)
 ### - [Screencap](#screencap)
-### - [Walkthrough Video](#walkthrough)
-### - [Installation and Usage](#installation)
+### - [Walkthrough Video](#walkthrough-video)
+### - [Installation and Usage](#installation-and-usage)
 ### - [License](#license)
 ### - [Contributing](#contributing)
 ### - [Questions](#questions)<br><br>
